@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 20 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 15%;
+
+    --primary: 150 35% 38%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 30 55% 92%;
+    --secondary-foreground: 20 25% 15%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 25 75% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 87%;
+    --input: 30 20% 87%;
+    --ring: 150 35% 38%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 150 25% 22%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 40 80% 65%;
+    --sidebar-primary-foreground: 20 25% 15%;
+    --sidebar-accent: 150 20% 28%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 150 15% 30%;
+    --sidebar-ring: 40 80% 65%;
+
+    /* Custom tokens */
+    --success: 150 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 40 90% 55%;
+    --warning-foreground: 20 25% 15%;
+    --info: 200 60% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --risk-low: 150 50% 45%;
+    --risk-medium: 40 90% 55%;
+    --risk-high: 0 72% 51%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(150 35% 38%), hsl(150 25% 22%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 75% 55%), hsl(40 80% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 33% 97%));
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+  }
+
+  .dark {
+    --background: 20 25% 10%;
+    --foreground: 40 33% 95%;
+    --card: 20 20% 14%;
+    --card-foreground: 40 33% 95%;
+    --popover: 20 20% 14%;
+    --popover-foreground: 40 33% 95%;
+    --primary: 150 40% 50%;
+    --primary-foreground: 20 25% 10%;
+    --secondary: 20 15% 20%;
+    --secondary-foreground: 40 33% 95%;
+    --muted: 20 15% 20%;
+    --muted-foreground: 40 15% 60%;
+    --accent: 25 75% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 150 40% 50%;
+    --sidebar-background: 20 25% 8%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 40 80% 65%;
+    --sidebar-primary-foreground: 20 25% 10%;
+    --sidebar-accent: 20 20% 14%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 40 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+  .risk-badge-low {
+    @apply bg-success text-success-foreground;
+  }
+  .risk-badge-medium {
+    @apply bg-warning text-warning-foreground;
+  }
+  .risk-badge-high {
+    @apply bg-destructive text-destructive-foreground;
+  }
+}
